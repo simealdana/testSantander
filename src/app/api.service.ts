@@ -1,19 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions, } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ApiService {
 
-  constructor(private http: Http) { }
+  constructor(private http: Http ) { }
 
-  getDateTimeAPI() {
-    // Call the API and return the response (change the code below)
-    let res: Response;
-    return res.json();
+  getDateTimeAPI():Observable<any> {
+    return this.http.get('https://jsonmock.hackerrank.com/datetime').pipe();
   }
 
-  public getDate(){
-    return this.http.get(this.getDateTimeAPI);
-  }
 }

@@ -31,10 +31,10 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const button = fixture.debugElement.nativeElement.querySelector('button');
     const app = fixture.componentInstance;
-    spyOn(app, 'getDateTime');
+    spyOn(app, 'showDate');
     button.click();
     fixture.whenStable().then(() => {
-      expect(app.getDateTime).toHaveBeenCalled();
+      expect(app.showDate).toHaveBeenCalled();
     });
   }));
 });

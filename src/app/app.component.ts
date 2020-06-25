@@ -8,21 +8,30 @@ import { ApiService } from './api.service';
 })
 export class AppComponent {
   dateTimeObj;
-  date: string;
-  year: string;
+  date: string | null =null;
+  year: string | null = null;
+  public time :string | null= null;
+  public dateShow:boolean = false;
 
   constructor(private service: ApiService) {}
 
   ngOnInit() {
 
-    console.log(this.getData())
+    this.getDateTime();
     // assign API response to dateTimeObj on loading of application
   }
 
-  getDateTime() {
-    // Use this function to parse the date returned by the API upon button click
+  private getDateTime() {
+    this.service.getDateTimeAPI().subscribe((res:any)=>{
+      this.dateTimeObj = JSON.parse(res._body);
+    },()=>{
+      console.log('ERROR')
+    });
   }
-  private getData(){
-   return this.service.getDateTimeAPI():
+
+  public showDate(){
+    this.dateShow = true;
+    this.date = this.dateTimeObj.date;
   }
+
 }
