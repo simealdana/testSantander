@@ -12,4 +12,8 @@ export class ApiService {
     let res: Response;
     return res.json();
   }
+
+  public getDate(){
+    return this.http.get(this.getDateTimeAPI);
+  }
 }

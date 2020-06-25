@@ -14,10 +14,15 @@ export class AppComponent {
   constructor(private service: ApiService) {}
 
   ngOnInit() {
+
+    console.log(this.getData())
     // assign API response to dateTimeObj on loading of application
   }
 
   getDateTime() {
     // Use this function to parse the date returned by the API upon button click
+  }
+  private getData(){
+   return this.service.getDateTimeAPI():
   }
 }
