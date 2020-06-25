@@ -2,31 +2,29 @@
   <div class="col-xs-12  col-sm-12 col-md-12 col-lg-12">
     <button type="button" class="btn btn-primary btn-lg center-block"(click)="showDate()">Display date</button>
   </div>
-  <div class="info center-block col-12 pt-4">
-    <div class="card">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-12 d-flex">
-            <h3>
-              Day:
-            </h3>
-            <p *ngIf="dateShow">{{date | date:'d'}}</p>
-          </div>
-          <div class="col-12 d-flex">
-            <h3>
-              Month:
-            </h3>
-            <p *ngIf="dateShow">{{date | date:'MM'}}</p>
-          </div>
-          <div class="col-12 d-flex">
-            <h3>
-              Year:
-            </h3>
-            <p *ngIf="dateShow">{{date | date:'y'}}</p>
-          </div>
-        </div>
+</div>
+<div class="col-12 w-100">
+  <div class="grid">
+    <article>
+      <div class="text">
+        <h3>
+          Day:
+        </h3>
+        <p *ngIf="dateShow">{{date | date:'d'}}</p>
       </div>
-    </div>
+      <div class="text">
+        <h3>
+          Month:
+        </h3>
+        <p *ngIf="dateShow">{{date | date:'MM'}}</p>
+      </div>
+      <div class="text">
+        <h3>
+          Day:
+        </h3>
+        <p *ngIf="dateShow">{{date | date:'y'}}</p>
+      </div>
+    </article>
   </div>
 </div>
 
