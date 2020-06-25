@@ -27,5 +27,14 @@ describe('AppComponent', () => {
     expect(app['service'].getDateTimeAPI).toHaveBeenCalled();
   }));
 
- 
+  it('should print upon button click', inject([ApiService], (service: ApiService) => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const button = fixture.debugElement.nativeElement.querySelector('button');
+    const app = fixture.componentInstance;
+    spyOn(app, 'showDate');
+    button.click();
+    fixture.whenStable().then(() => {
+      expect(app.showDate).toHaveBeenCalled();
+    });
+  }));
 });

@@ -30,21 +30,4 @@ describe('ApiService', () => {
     expect(service['http'].get).toHaveBeenCalled();
   }));
 
-  it('should not ditch the API function (API Mock Test)', inject([ApiService, MockBackend], (service: ApiService, backend: MockBackend) => {
-    const mockData = {
-      "time": "11:12:37 AM",
-      "date": "06-25-2020"
-    };
-    let response = new ResponseOptions({
-      body: JSON.stringify(mockData)
-    });
-    const baseResponse = new Response(response);
-
-    backend.connections.subscribe(
-      (c: MockConnection) => c.mockRespond(baseResponse)
-    );
-    return service.getDateTimeAPI().subscribe(data => {
-      expect(data._body).toEqual(mockData);
-    });
-  }));
 });
