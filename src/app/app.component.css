@@ -89,3 +89,8 @@ h2 {
   justify-content: center;
 }
 
+.btn{
+  border-radius: 111px 111px 111px 111px;
+  box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
